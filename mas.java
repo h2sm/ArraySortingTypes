@@ -11,8 +11,10 @@ abstract class SortingAlgorithm{
 }
 class PerformanceTester{
     void test(SortingAlgorithm ... algs){
+        String[] str = new String[]{"Bubble Sort", "Insertion Sort", "Selection Sort", "Merge Sort"};
+        int strPointer=0;
         int[] numIters = {1000, 1000, 100, 100, 10};
-        int[] numElems = {100, 1000, 10000, 100000, 1000000 };
+        int[] numElems = {100, 1000, 10000, 100000, 1000000};
         for (var alg:algs) {
             for (int i=0; i<5; i++){//i номер набора
                 long time =0;
@@ -23,10 +25,10 @@ class PerformanceTester{
                     //alg.sortDesc(arr);
                     long end = System.currentTimeMillis();//заканчиваем отсчет
                     time += (end - start);
-                    System.out.println("Итерация:" + iters + " NUMITERS:" + numIters[i] + " NUMELEMS:" + numElems[i] + " Время: " + time + " Среднее время:" + (double) time/numIters[i]);
                 }
-
+                System.out.println(str[strPointer] + ": СРЕДНЕЕ ВРЕМЯ ДЛЯ numiters " + numIters[i] + " и numelems " + numElems[i] + ": " + (double) time/numIters[i]);
             }
+            strPointer++;
         }
     }
     private Random ran = new Random();
