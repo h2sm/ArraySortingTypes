@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        new PerformanceTester().test(new MergeSort());
+        new PerformanceTester().test(new BubbleSort(), new InsertionSort(),new SelectionSort(), new MergeSort());
     }
 }
 abstract class SortingAlgorithm{
