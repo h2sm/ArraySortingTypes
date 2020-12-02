@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-       new PerformanceTester().test(new BubbleSort(), new InsertionSort(),new SelectionSort(),new MergeSort());
-        }
+        new PerformanceTester().test(new MergeSort());
+    }
 }
 abstract class SortingAlgorithm{
     abstract void sortAsc(double[] arr);//сортировка массива по возрастанию
@@ -151,7 +151,7 @@ class MergeSort extends SortingAlgorithm{
             if (left[i] > right[i]) arr[k++] = left[i++];
             else arr[k++] = right[j++];
         }
-        while (i <j) arr[k++]=left[i++];
+        while (i <l) arr[k++]=left[i++];
         while (j<r) arr[k++] = right[j++];
     }
     void sortDesc(double[] arr) {
